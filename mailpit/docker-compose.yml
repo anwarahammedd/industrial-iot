@@ -1,0 +1,13 @@
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name : industrial-iot-mailpit
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    networks:
+      - kafka_default
+
+networks:
+  kafka_default:
+    external: true

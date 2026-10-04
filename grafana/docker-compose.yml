@@ -1,0 +1,17 @@
+services:
+
+  grafana:
+    image: grafana/grafana:latest
+
+    container_name: industrial-iot-grafana
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./dashboards:/var/lib/grafana/dashboards
+      - ./provisioning:/etc/grafana/provisioning
+
+volumes:
+  grafana_data:

@@ -1,0 +1,21 @@
+services:
+
+  postgres:
+    image: postgres:16
+
+    container_name: industrial-iot-postgres
+
+    environment:
+      POSTGRES_DB: industrial_iot
+      POSTGRES_USER: iot_user
+      POSTGRES_PASSWORD: iot_password
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+
+  postgres_data:
